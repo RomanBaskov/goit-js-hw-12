@@ -2,27 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 12</title>
+    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <title>GOIT-JS-HW-12</title>
   </head>
   <body>
-    <form action="" class="form">
-      <input
-        class="input"
-        type="text"
-        id="searchInput"
-        placeholder="Search images..."
-      />
-      <button class="btn" type="submit">Search</button>
+    <form class="form">
+      <input type="text" class="user-input" placeholder="Search images..." />
+      <button type="submit" class="submit-button">Search</button>
     </form>
-
-    <div class="loader"></div>
-    <div class="images-container" id="images"></div>
-
-    <button class="btn hidden load-more" type="button">Load more</button>
-
+    <ul class="gallery"></ul>
+    <div class="load"></div>
+    <button class="submit-button add-more-button hide">Load more</button>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
