@@ -8,6 +8,7 @@ const box = document.querySelector('.gallery');
 const load = document.querySelector('.load');
 const addMoreButton = document.querySelector('.add-more-button');
 
+
 const iziOption = {
   messageColor: '#FAFAFB',
   messageSize: '16px',
@@ -32,7 +33,7 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });
 
-export function endOfList(daddyElement) {
+ export function endOfList(daddyElement) {
   removeLoadStroke(daddyElement);
   daddyElement.insertAdjacentHTML(
     'beforeend',
@@ -53,6 +54,7 @@ export function removeLoadStroke(daddyElement) {
 
 export function markup(data) {
   const { hits } = data;
+
 
   const markup = hits
     .map(
@@ -75,6 +77,7 @@ export function markup(data) {
     )
     .join(' ');
 
+    
   removeLoadStroke(load);
 
   box.insertAdjacentHTML('beforeend', markup);

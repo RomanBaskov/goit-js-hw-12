@@ -8,8 +8,10 @@ import errorIcon from '../img/error.svg';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+
 const box = document.querySelector('.gallery');
 const load = document.querySelector('.load');
+
 
 const iziOption = {
   messageColor: '#FAFAFB',
@@ -22,7 +24,10 @@ const iziOption = {
   closeOnClick: true,
 };
 
-let perPage = 15;
+
+let perPage = 40;
+
+
 
 export async function getImage(searchedQuery, pageNumber) {
   const API_KEY = '48883219-a8d6c51151168ef356226c6a1';
@@ -41,7 +46,7 @@ export async function getImage(searchedQuery, pageNumber) {
 
   try {
     const { data } = await axios.get(URL);
-
+    
     if (data.hits.length === 0) {
       iziToast.show({
         ...iziOption,
@@ -56,7 +61,6 @@ export async function getImage(searchedQuery, pageNumber) {
 
     if (pageNumber * perPage >= data.totalHits) {
       endOfList(load);
-      return data.totalHits;
     }
 
     return data.totalHits;
@@ -70,4 +74,6 @@ export async function getImage(searchedQuery, pageNumber) {
     });
     return 0;
   }
-}
+} 
+  
+
